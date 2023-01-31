@@ -81,6 +81,8 @@ class MainActivity : AppCompatActivity() {
                     textArray.get(i).visibility = View.INVISIBLE
                 } */
                 Toast.makeText(this,"Exceeded number of guesses",Toast.LENGTH_LONG).show()
+
+                Toast.makeText(this,"Word was,"+answer_word,Toast.LENGTH_LONG).show()
                 guess_btn.setAlpha(.5f);
                 guess_btn.setClickable(false);
 
@@ -88,8 +90,8 @@ class MainActivity : AppCompatActivity() {
                 guess = answer_view.getText().toString()
                 guess_checked = checkGuess(guess.uppercase(),answer_word)
                 Log.v("guess:","guess is:"+guess+"ans is: "+answer_word)
-                if (guess == answer_word) {
-                    Toast.makeText(this,"Correct",Toast.LENGTH_LONG).show()
+                if (guess.uppercase() == answer_word) {
+                    Toast.makeText(this,"Correct word was:"+answer_word,Toast.LENGTH_LONG).show()
                 }
                 current_label = textArray.get(vis_counter)
                 current_check = textArray.get(vis_counter+1)
